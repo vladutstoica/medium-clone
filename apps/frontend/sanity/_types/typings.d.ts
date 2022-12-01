@@ -18,3 +18,8 @@ export interface Post {
     body: [object];
     publishedAt: datetime,
 }
+
+export interface Category {
+    title: 'string',
+    description: 'text',
+}

@@ -4,11 +4,11 @@ import urlFor from "sanity/utils/urlFor";
 import { Post } from "sanity/_types/typings";
 
 interface Props {
-    posts: [Post]
+    trendingPosts: [Post]
 }
 
 // TODO: fetch first 6 posts
-const Posts = ({ posts }: Props) => {
+const TrendingPosts = ({ trendingPosts }: Props) => {
     return (
         <div className="max-w-7xl mx-auto px-6 py-8 space-y-2">
             <div className="flex items-center gap-x-2">
@@ -17,14 +17,14 @@ const Posts = ({ posts }: Props) => {
                 </svg>
                 <h3 className="font-bold text-xs uppercase">Trendings on Medium</h3>
             </div>
-            <div className="flex flex-wrap gap-2">
-                {posts.map((post, index) => (
-                    <Link key={post._id} className="flex gap-x-6" href={`/post/${post.slug.current}`}>
-                        <span className="text-3xl font-black text-neutral-200">0{++index}</span>
+            <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-2 md:gap-8">
+                {trendingPosts.map((post, index) => (
+                    <Link key={post._id} className="flex gap-x-5" href={`/post/${post.slug.current}`}>
+                        <span className="text-3xl font-bold text-neutral-200">0{++index}</span>
                         <div className="space-y-2">
                             <div className="flex items-center gap-x-2 mt-2">
                                 {/* TODO: We should provide an optimized image and include it using next/image */}
-                                <img className="rounded-full" src={urlFor(post.author.image).url()} alt="" width={20} />
+                                <img className="aspect-square object-cover rounded-full" src={urlFor(post.author.image).url()} alt="" width={22} />
                                 <span className="font-bold text-xs">{post.author.name}</span>
                             </div>
                             <h2 className="font-bold">{post.title}</h2>
@@ -37,4 +37,4 @@ const Posts = ({ posts }: Props) => {
     )
 }
 
-export default Posts;
+export default TrendingPosts;

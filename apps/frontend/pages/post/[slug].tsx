@@ -1,3 +1,5 @@
+import Footer from "@/components/Footer";
+import PostHeader from "@/components/PostHeader";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next"
 import client from "sanity/client"
 import GetPost from "sanity/queries/getPost";
@@ -11,7 +13,14 @@ interface Props {
 const Post: NextPage = ({ post }: Props) => {
     console.log({ post })
     return (
-        <div>{post.title}</div>
+        <div>
+            <PostHeader />
+
+            {/* <PostDetails /> */}
+
+
+            <Footer />
+        </div>
     )
 }
 

@@ -10,6 +10,7 @@ import GetPosts from 'sanity/queries/getPosts';
 import Categories from '@/components/Categories';
 import GetCategories from 'sanity/queries/getCategories';
 import Posts from '@/components/Posts';
+import Footer from '@/components/Footer';
 
 interface Props {
     trendingPosts: [Post],
@@ -33,7 +34,7 @@ const Home: NextPage = ({ trendingPosts, posts, categories }: Props) => {
                 {categories && <Categories categories={categories} />}
                 {posts && <Posts posts={posts} />}
             </div>
-
+            <Footer />
         </div>
     )
 }

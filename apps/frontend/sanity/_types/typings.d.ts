@@ -7,11 +7,7 @@ export interface Post {
         image: string;
     };
     description: string;
-    mainImage: {
-        asset: {
-            url: string;
-        };
-    };
+    mainImage: string;
     slug: {
         current: string;
     };

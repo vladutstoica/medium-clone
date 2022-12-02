@@ -2,7 +2,7 @@ import Link from "next/link";
 
 function Header() {
     return (
-        <header className={"bg-accent border-b-2 border-neutral-900"}>
+        <header className={"sticky top-0 bg-accent border-b-2 border-neutral-900"}>
             <div className={"max-w-7xl mx-auto flex justify-between items-center gap-x-5 px-6 py-4"}>
                 <Link href="/">
                     <svg viewBox="0 0 3940 610" className="w-40 object-contain cursor-pointer">

@@ -6,7 +6,7 @@ interface Props {
 
 const Categories = ({ categories }: Props) => {
     return (
-        <div className="border-y-2 ">
+        <div className="order-1 lg:order-2 lg:max-w-md border-b-2">
             <div className="max-w-7xl mx-auto px-6 py-8">
                 <h3 className="font-bold text-xs uppercase">DISCOVER MORE OF WHAT MATTERS TO YOU</h3>
 

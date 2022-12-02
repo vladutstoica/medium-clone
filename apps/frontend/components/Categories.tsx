@@ -12,7 +12,7 @@ const Categories = ({ categories }: Props) => {
 
                 <div className="flex flex-wrap gap-2 mt-4">
                     {categories.map((category) => (
-                        <div className="border-2 border-neutral-100 rounded-sm">
+                        <div key={category._id} className="border-2 border-neutral-100 rounded-sm">
                             <span className="block px-6 py-2 font-light text-xs text-neutral-500">{category.title}</span>
                         </div>
                     ))}

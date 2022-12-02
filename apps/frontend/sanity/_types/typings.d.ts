@@ -16,6 +16,7 @@ export interface Post {
 }
 
 export interface Category {
+    _id : 'string',
     title: 'string',
     description: 'text',
 }

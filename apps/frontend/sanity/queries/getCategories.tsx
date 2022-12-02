@@ -1,6 +1,6 @@
 import groq from "groq";
 
-const getCategories = groq`
+const GetCategories = groq`
 *[_type == "category"][0..9] {
     _id,
     title,
@@ -8,4 +8,4 @@ const getCategories = groq`
 }
 `
 
-export default getCategories;
+export default GetCategories;

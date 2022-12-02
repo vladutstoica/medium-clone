@@ -8,7 +8,7 @@ import TrendingPosts from '@/components/TrendingPosts';
 import GetTrendingPosts from 'sanity/queries/getTrendingPosts';
 import GetPosts from 'sanity/queries/getPosts';
 import Categories from '@/components/Categories';
-import getCategories from 'sanity/queries/getCategories';
+import GetCategories from 'sanity/queries/getCategories';
 import Posts from '@/components/Posts';
 
 interface Props {
@@ -19,7 +19,7 @@ interface Props {
 
 const Home: NextPage = ({ trendingPosts, posts, categories }: Props) => {
     return (
-        <div className="">
+        <div>
             <Head>
                 <title>Medium Clone</title>
                 <link rel="icon" href="/favicon.ico" />
@@ -43,7 +43,7 @@ export default Home
 export const getServerSideProps: GetServerSideProps = async (context) => {
     const trendingPosts = await client.fetch(GetTrendingPosts);
     const posts = await client.fetch(GetPosts);
-    const categories = await client.fetch(getCategories);
+    const categories = await client.fetch(GetCategories);
 
     return {
         props: {

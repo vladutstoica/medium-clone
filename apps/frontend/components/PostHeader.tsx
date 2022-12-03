@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const PostHeader = () => {
     return (
-        <header className={"sticky top-0 border-b-2 border-neutral-100"}>
+        <header className={"sticky top-0 bg-neutral-50 border-b-2 border-neutral-100"}>
             <div className={"max-w-7xl mx-auto flex justify-between items-center gap-x-5 px-6 py-4"}>
                 <Link href="/">
                     <svg viewBox="0 0 1043.63 592.71" className="w-12 object-contain cursor-pointer">

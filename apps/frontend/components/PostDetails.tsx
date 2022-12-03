@@ -14,8 +14,8 @@ const components = {
         //         <code>{props.node.code}</code>
         //     </pre>
         // ),
-        span: props => (
-            <span>{props.node.span}</span>
+        image: ({ value }) => (
+            <img src={urlFor(value).url()} alt="" />
         )
     }
 }
@@ -59,9 +59,10 @@ const PostDetails = ({ post }: Props) => {
                 </ul>
             </div>
 
-            <article className="mt-8">
+            <article className="prose mt-8">
                 <h1 className="font-black text-3xl">{post.title}</h1>
-
+                {console.log(post)}
+                {console.log(post?.body)}
                 {/* <span>{post.body}</span> */}
                 <PortableText value={post?.body} components={components} />
             </article>

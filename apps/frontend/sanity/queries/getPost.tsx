@@ -7,6 +7,7 @@ const GetPost = groq`
     description,
     mainImage,
     slug,
+    body,
     publishedAt,
     author -> {
         name,

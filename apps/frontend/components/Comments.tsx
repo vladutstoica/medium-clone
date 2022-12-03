@@ -15,7 +15,7 @@ const Comments = ({ post }: Props) => {
                 <span className="font-black text-3xl mb-2">Comments</span>
 
                 {post.comments.map((comment) => (
-                    <Comment comment={comment} />
+                    <Comment key={comment._id} comment={comment} />
                 ))}
             </div>
         </div>

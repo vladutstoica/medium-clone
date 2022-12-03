@@ -11,7 +11,12 @@ const GetPost = groq`
     author -> {
         name,
         image
-    }
+    },
+    "comments": *[
+      _type == "comment" &&
+      post._ref == ^._id &&
+      approved == true
+    ] | order(_createdAt desc)
 }
 `
 

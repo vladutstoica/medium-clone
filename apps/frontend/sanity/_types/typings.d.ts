@@ -12,11 +12,18 @@ export interface Post {
         current: string;
     };
     body: [object];
+    comments: [Comment]
     publishedAt: datetime,
 }
 
 export interface Category {
-    _id : 'string',
-    title: 'string',
-    description: 'text',
+    _id: string,
+    title: string,
+    description: text,
+}
+
+export interface Comment {
+    _id: string,
+    name: string,
+    message: text,
 }

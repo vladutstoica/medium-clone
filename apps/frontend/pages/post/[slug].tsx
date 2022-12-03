@@ -1,4 +1,6 @@
+import Comments from "@/components/Comments";
 import Footer from "@/components/Footer";
+import PostDetails from "@/components/PostDetails";
 import PostHeader from "@/components/PostHeader";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next"
 import client from "sanity/client"
@@ -11,14 +13,11 @@ interface Props {
 }
 
 const Post: NextPage = ({ post }: Props) => {
-    console.log({ post })
     return (
         <div>
             <PostHeader />
-
-            {/* <PostDetails /> */}
-
-
+            <PostDetails post={post} />
+            <Comments post={post} />
             <Footer />
         </div>
     )

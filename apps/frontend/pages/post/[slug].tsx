@@ -14,12 +14,12 @@ interface Props {
 
 const Post: NextPage<Props> = ({ post }) => {
     return (
-        <div>
+        <>
             <PostHeader />
             <PostDetails post={post} />
             <Comments post={post} />
             <Footer />
-        </div>
+        </>
     )
 }
 

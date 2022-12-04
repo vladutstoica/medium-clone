@@ -20,10 +20,11 @@ interface Props {
 
 const Home: NextPage<Props> = ({ trendingPosts, posts, categories }) => {
     return (
-        <div>
+        <>
             <Head>
                 <title>Medium Clone</title>
                 <link rel="icon" href="/favicon.ico" />
+                <meta name="description" content="Medium Clone" />
             </Head>
 
             <Header />
@@ -37,7 +38,7 @@ const Home: NextPage<Props> = ({ trendingPosts, posts, categories }) => {
             </div>
 
             <Footer />
-        </div>
+        </>
     )
 }
 

@@ -5,11 +5,11 @@ import Hero from "@/components/Hero";
 import client from "../sanity/client";
 import { Category, Post } from 'sanity/_types/typings';
 import TrendingPosts from '@/components/TrendingPosts';
-import GetTrendingPosts from 'sanity/queries/getTrendingPosts';
-import GetPosts from 'sanity/queries/getPosts';
+import GetTrendingPosts from 'sanity/queries/GetTrendingPosts';
 import Categories from '@/components/Categories';
-import GetCategories from 'sanity/queries/getCategories';
+import GetCategories from 'sanity/queries/GetCategories';
 import Posts from '@/components/Posts';
+import GetPosts from 'sanity/queries/GetPosts';
 import Footer from '@/components/Footer';
 
 interface Props {
@@ -18,7 +18,7 @@ interface Props {
     categories: [Category]
 }
 
-const Home: NextPage = ({ trendingPosts, posts, categories }: Props) => {
+const Home: NextPage<Props> = ({ trendingPosts, posts, categories }) => {
     return (
         <div>
             <Head>
@@ -28,20 +28,22 @@ const Home: NextPage = ({ trendingPosts, posts, categories }: Props) => {
 
             <Header />
             <Hero />
+
             {trendingPosts && <TrendingPosts trendingPosts={trendingPosts} />}
 
             <div className="max-w-7xl mx-auto flex flex-col justify-between items-start lg:flex-row ">
                 {categories && <Categories categories={categories} />}
                 {posts && <Posts posts={posts} />}
             </div>
+
             <Footer />
         </div>
     )
 }
 
-export default Home
+export default Home;
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async () => {
     const trendingPosts = await client.fetch(GetTrendingPosts);
     const posts = await client.fetch(GetPosts);
     const categories = await client.fetch(GetCategories);

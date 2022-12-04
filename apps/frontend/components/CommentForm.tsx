@@ -3,7 +3,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { Post, Comment } from "sanity/_types/typings";
 
 interface Props {
-    post: Post,
+    post: Post
 }
 
 const CommentForm = ({ post }: Props) => {
@@ -16,10 +16,8 @@ const CommentForm = ({ post }: Props) => {
             method: "POST",
             body: JSON.stringify(data)
         }).then(() => {
-            console.log(data)
             setIsSubmitted(true)
         }).catch((err) => {
-            console.log(err)
             setIsSubmitted(false)
         })
     };

@@ -4,7 +4,7 @@ import PostDetails from "@/components/PostDetails";
 import PostHeader from "@/components/PostHeader";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next"
 import client from "sanity/client"
-import GetPost from "sanity/queries/getPost";
+import GetPost from "sanity/queries/GetPost";
 import GetSlugs from "sanity/queries/GetSlugs";
 import { Post } from 'sanity/_types/typings';
 
@@ -12,7 +12,7 @@ interface Props {
     post: Post
 }
 
-const Post: NextPage = ({ post }: Props) => {
+const Post: NextPage<Props> = ({ post }) => {
     return (
         <div>
             <PostHeader />

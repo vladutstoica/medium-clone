@@ -11,7 +11,7 @@ export interface Post {
     slug: {
         current: string;
     };
-    body: [object];
+    body: block;
     comments: [Comment]
     publishedAt: datetime,
 }

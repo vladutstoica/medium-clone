@@ -2,21 +2,15 @@ import { PortableText } from "@portabletext/react";
 import getDate from "sanity/utils/getDate";
 import urlFor from "sanity/utils/urlFor";
 import { Post } from "sanity/_types/typings";
+import Image from 'next/image'
 
 interface Props {
-    post: Post
+    post: Post,
 }
 
 const components = {
     types: {
-        // code: props => (
-        //     <pre data-language={props.node.language}>
-        //         <code>{props.node.code}</code>
-        //     </pre>
-        // ),
-        image: ({ value }) => (
-            <img src={urlFor(value).url()} alt="" />
-        )
+        image: (props: { value: string; }) => <img src={urlFor(props.value).url()} alt="Article Image" />
     }
 }
 
@@ -25,7 +19,7 @@ const PostDetails = ({ post }: Props) => {
         <div className="max-w-2xl mx-auto py-6">
             <div className="flex justify-between items-center">
                 <div className="flex gap-4">
-                    <img className="w-12 self-start aspect-square object-cover rounded-full" src={urlFor(post.author.image).url()} alt="" />
+                    <Image className="w-12 self-start aspect-square object-cover rounded-full" src={urlFor(post.author.image).url()} width={48} height={48} alt="Author profile picture" />
                     <div className="flex flex-col gap-1">
                         <div className="flex items-center space-x-2">
                             <span className="font-light text-md">{post.author.name}</span>
@@ -61,9 +55,7 @@ const PostDetails = ({ post }: Props) => {
 
             <article className="prose mt-8">
                 <h1 className="font-black text-3xl">{post.title}</h1>
-                {console.log(post)}
-                {console.log(post?.body)}
-                {/* <span>{post.body}</span> */}
+
                 <PortableText value={post?.body} components={components} />
             </article>
         </div>

@@ -2,10 +2,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import client from 'sanity/client'
 
-type Data = {
-    name: string
-}
-
 export default function handler(
     req: NextApiRequest,
     res: NextApiResponse

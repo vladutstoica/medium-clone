@@ -19,7 +19,8 @@ const PostDetails = ({ post }: Props) => {
         <div className="max-w-2xl mx-auto p-6">
             <div className="flex justify-between items-center">
                 <div className="flex gap-4">
-                    <Image className="w-12 self-start aspect-square object-cover rounded-full" src={urlFor(post.author.image).url()} width={48} height={48} alt="Author profile picture" />
+                    <Image className="w-12 self-start aspect-square object-cover rounded-full" src={urlFor(post.author.image).url()} width={60} height={60} alt="Author profile picture" />
+
                     <div className="flex flex-col gap-1">
                         <div className="flex items-center space-x-2">
                             <span className="font-light text-md">{post.author.name}</span>

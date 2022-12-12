@@ -2,6 +2,13 @@
 
 This is an official Yarn v1 starter turborepo.
 
+### Features
+
+- CMS interface;
+- API integration;
+- Create/Read/Update/Delete Posts, Authors, Categories, Comments;
+- Mobile-first design.
+
 ## What's inside?
 
 This turborepo uses [Yarn](https://classic.yarnpkg.com/) as a package manager. It includes the following packages/apps:

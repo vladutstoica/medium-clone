@@ -1,5 +1,4 @@
 import type { GetServerSideProps, NextPage } from 'next'
-import Head from 'next/head'
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import client from "../sanity/client";
@@ -21,12 +20,6 @@ interface Props {
 const Home: NextPage<Props> = ({ trendingPosts, posts, categories }) => {
     return (
         <>
-            <Head>
-                <title>Medium Clone</title>
-                <link rel="icon" href="/favicon.ico" />
-                <meta name="description" content="Medium Clone" />
-            </Head>
-
             <Header />
             <Hero />
 

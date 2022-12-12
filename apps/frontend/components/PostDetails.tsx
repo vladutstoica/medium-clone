@@ -10,7 +10,7 @@ interface Props {
 
 const components = {
     types: {
-        image: (props: { value: string; }) => <img src={urlFor(props.value).url()} alt="Article Image" />
+        image: (props: { value: string; }) => <Image className="mx-auto" src={urlFor(props.value).url()} width={400} height={400} alt="Article Image" />
     }
 }
 

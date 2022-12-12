@@ -17,7 +17,7 @@ const CommentForm = ({ post }: Props) => {
             body: JSON.stringify(data)
         }).then(() => {
             setIsSubmitted(true)
-        }).catch((err) => {
+        }).catch(() => {
             setIsSubmitted(false)
         })
     };
